@@ -5,10 +5,14 @@ from linebot.models import *
 import os
 import random
 import openai
+
 app = Flask(__name__)
+
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 openai.api_key = os.environ['OPENAI_SECRET']
+
+
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
@@ -19,15 +23,29 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
- @handler.add(MessageEvent, message=TextMessage)
- def handle_message(event):
-     msg = event.message.text
-     if msg == "午餐吃甚麼"
-     if msg == "午餐吃甚麼":
-         lunch_options = ['便當', '麵類', '飯類', '燉飯', '三明治']
-         #message = TextSendMessage(text=event.message.text)
-         message = TextSendMessage(text=random.choice(lunch_options))
+
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    msg = event.message.text
+    ai_msg = msg[:6].lower()
+    if ai_msg == 'hi ai:':
+            # 將第六個字元之後的訊息發送給 OpenAI
+            response = openai.Completion.create(
+                model='text-davinci-003',
+                prompt=msg[6:],
+                max_tokens=256,
+                temperature=0.5,
+                )
+            # 接收到回覆訊息後，移除換行符號
+            reply_msg = TextSendMessage(text=response["choices"][0]["text"].replace('\n',''))
+
+    
+    if msg == "午餐吃甚麼":
+        lunch_options = ['便當', '麵類', '飯類', '燉飯', '三明治']
+        #message = TextSendMessage(text=event.message.text)
+        message = TextSendMessage(text=random.choice(lunch_options))
     line_bot_api.reply_message(event.reply_token, message)
+
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))

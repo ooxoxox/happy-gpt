@@ -4,13 +4,11 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 import os
 import random
-
+import openai
 app = Flask(__name__)
-
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
-
-
+openai.api_key = os.environ['OPENAI_SECRET']
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
@@ -21,8 +19,6 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
-
-
  @handler.add(MessageEvent, message=TextMessage)
  def handle_message(event):
      msg = event.message.text
@@ -32,7 +28,6 @@ def callback():
          #message = TextSendMessage(text=event.message.text)
          message = TextSendMessage(text=random.choice(lunch_options))
     line_bot_api.reply_message(event.reply_token, message)
-
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))

@@ -27,157 +27,157 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     card = {
-            "type": "bubble",
-            "hero": {
+        "type": "bubble",
+        "hero": {
             "type": "image",
             "url": "https://memeprod.sgp1.digitaloceanspaces.com/meme/64f9c2b295e72175fdebec660914abd6.png",
             "size": "full",
             "aspectRatio": "20:13",
             "aspectMode": "cover",
             "action": {
-            "type": "uri",
-            "uri": "http://linecorp.com/"
+                "type": "uri",
+                "uri": "http://linecorp.com/"
             }
         },
         "body": {
             "type": "box",
             "layout": "vertical",
             "contents": [
-            {
-                "type": "text",
-                "text": "調解委員會",
-                "weight": "bold",
-                "size": "xl"
-            },
-            {
-                "type": "box",
-                "layout": "baseline",
-                "margin": "md",
-                "contents": [
-                {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-                },
-                {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-                },
-                {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-                },
-                {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-                },
-                {
-                    "type": "icon",
-                    "size": "sm",
-                    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
-                },
                 {
                     "type": "text",
-                    "text": "4.0",
-                    "size": "sm",
-                    "color": "#999999",
-                    "margin": "md",
-                    "flex": 0
-                }
-                ]
-            },
-            {
-                "type": "box",
-                "layout": "vertical",
-                "margin": "lg",
-                "spacing": "sm",
-                "contents": [
-                {
-                    "type": "box",
-                    "layout": "baseline",
-                    "spacing": "sm",
-                    "contents": [
-                    {
-                        "type": "text",
-                        "text": "生命值",
-                        "color": "#aaaaaa",
-                        "size": "xs",
-                        "flex": 1
-                    },
-                    {
-                        "type": "text",
-                        "text": "所剩不多",
-                        "wrap": true,
-                        "color": "#666666",
-                        "size": "sm",
-                        "flex": 5
-                    }
-                    ]
+                    "text": "調解委員會",
+                    "weight": "bold",
+                    "size": "xl"
                 },
                 {
                     "type": "box",
                     "layout": "baseline",
+                    "margin": "md",
+                    "contents": [
+                        {
+                            "type": "icon",
+                            "size": "sm",
+                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                        },
+                        {
+                            "type": "icon",
+                            "size": "sm",
+                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                        },
+                        {
+                            "type": "icon",
+                            "size": "sm",
+                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                        },
+                        {
+                            "type": "icon",
+                            "size": "sm",
+                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                        },
+                        {
+                            "type": "icon",
+                            "size": "sm",
+                            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+                        },
+                        {
+                            "type": "text",
+                            "text": "4.0",
+                            "size": "sm",
+                            "color": "#999999",
+                            "margin": "md",
+                            "flex": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "lg",
                     "spacing": "sm",
                     "contents": [
-                    {
-                        "type": "text",
-                        "text": "存活率",
-                        "color": "#aaaaaa",
-                        "size": "xs",
-                        "flex": 1
-                    },
-                    {
-                        "type": "text",
-                        "text": "機會渺茫",
-                        "wrap": true,
-                        "color": "#666666",
-                        "size": "sm",
-                        "flex": 5
-                    }
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "生命值",
+                                    "color": "#aaaaaa",
+                                    "size": "xs",
+                                    "flex": 1
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "所剩不多",
+                                    "wrap": True,
+                                    "color": "#666666",
+                                    "size": "sm",
+                                    "flex": 5
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "spacing": "sm",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "存活率",
+                                    "color": "#aaaaaa",
+                                    "size": "xs",
+                                    "flex": 1
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "機會渺茫",
+                                    "wrap": True,
+                                    "color": "#666666",
+                                    "size": "sm",
+                                    "flex": 5
+                                }
+                            ]
+                        }
                     ]
                 }
-                ]
-            }
-            ]
-        },
+            ],
         "footer": {
             "type": "box",
             "layout": "vertical",
             "spacing": "sm",
             "contents": [
-            {
-                "type": "button",
-                "style": "link",
-                "height": "sm",
-                "action": {
-                "type": "uri",
-                "label": "搶救大作戰",
-                "uri": "https://linecorp.com"
+                {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                        "type": "uri",
+                        "label": "搶救大作戰",
+                        "uri": "https://linecorp.com"
+                    }
+                },
+                {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {
+                        "type": "uri",
+                        "label": "分手雷臺",
+                        "uri": "https://linecorp.com"
+                    }
+                },
+                {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [],
+                    "margin": "sm"
                 }
-            },
-            {
-                "type": "button",
-                "style": "link",
-                "height": "sm",
-                "action": {
-                "type": "uri",
-                "label": "分手雷臺",
-                "uri": "https://linecorp.com"
-                }
-            },
-            {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [],
-                "margin": "sm"
-            }
             ],
             "flex": 0
         }
-        }
+    }
+        
     msg = event.message.text
     if msg  == "發卡片":
         line_bot_api.reply_message(

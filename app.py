@@ -95,6 +95,19 @@ def handle_message(event):
         reply_msg = TextSendMessage(text=random.choice(lunch_options))
     line_bot_api.reply_message(event.reply_token, reply_msg)
     
+    ai_msg = msg[:6].lower()
+    if ai_msg == 'hi ai:':
+            # 將第六個字元之後的訊息發送給 OpenAI
+            response = openai.Completion.create(
+                model='text-davinci-003',
+                prompt=msg[6:],
+                max_tokens=256,
+                temperature=0.5,
+                )
+            # 接收到回覆訊息後，移除換行符號
+            reply_msg = TextSendMessage(text=response["choices"][0]["text"].replace('\n',''))
+
+    
     if msg == "說笑話給我聽":
         lunch_options = ['便當', '麵類', '飯類', '燉飯', '三明治']
         #message = TextSendMessage(text=event.message.text)

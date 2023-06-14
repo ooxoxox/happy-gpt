@@ -108,7 +108,7 @@ def handle_message(event):
             reply_msg = TextSendMessage(text=response["choices"][0]["text"].replace('\n',''))
 
     
-    if msg == "說笑話給我聽":
+    if msg == "晚餐吃什麼":
         lunch_options = ['便當', '麵類', '飯類', '燉飯', '三明治']
         #message = TextSendMessage(text=event.message.text)
         reply_msg = TextSendMessage(text=random.choice(lunch_options))

@@ -94,6 +94,12 @@ def handle_message(event):
         #message = TextSendMessage(text=event.message.text)
         reply_msg = TextSendMessage(text=random.choice(lunch_options))
     line_bot_api.reply_message(event.reply_token, reply_msg)
+    
+    if msg == "說笑話給我聽":
+        lunch_options = ['便當', '麵類', '飯類', '燉飯', '三明治']
+        #message = TextSendMessage(text=event.message.text)
+        reply_msg = TextSendMessage(text=random.choice(lunch_options))
+    line_bot_api.reply_message(event.reply_token, reply_msg)
 
 import os
 if __name__ == "__main__":

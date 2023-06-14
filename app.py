@@ -27,49 +27,137 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     card = {
-              "type": "bubble",
-              "hero": {
-                "type": "image",
-                "url": "https://lions-clubs.dev2.rib.tw/static/documents/images/Lions_Clubs_International.png",
-                "size": "full",
-                "aspectRatio": "1:1",
-                "aspectMode": "cover",
-                "action": {
-                  "type": "uri",
-                  "uri": "http://linecorp.com/"
-                }
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/307126324_639862924234617_1005686940944320992_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=a26aad&_nc_ohc=xdeZsiyiLDcAX_fNUM_&_nc_ht=scontent-tpe1-1.xx&oh=00_AfCtQFQHerCrjSHbB3949gRQNuAzy9lcPJaEE_9A_Li0xg&oe=648DF5BD",
+    "size": "full",
+    "aspectRatio": "1:1",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "不離不企",
+        "weight": "bold",
+        "size": "xl"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "text",
+            "text": "87",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "md",
+            "flex": 0
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Place",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
               },
-              "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "113年度獲獎獅友名單",
-                    "weight": "bold",
-                    "size": "xl"
-                  }
-                ]
-              },
-              "footer": {
-                "type": "box",
-                "layout": "vertical",
-                "spacing": "sm",
-                "contents": [
-                  {
-                    "type": "button",
-                    "style": "link",
-                    "height": "sm",
-                    "action": {
-                      "type": "uri",
-                      "label": "公文連結",
-                      "uri": "https://lions-clubs.dev2.rib.tw"
-                    }
-                  }
-                ],
-                "flex": 0
+              {
+                "type": "text",
+                "text": "北極",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
               }
-            }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Time",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "到死為止",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "margin": "sm"
+      }
+    ],
+    "flex": 0
+  }
+}
     msg = event.message.text
     if msg  == "發卡片":
         line_bot_api.reply_message(

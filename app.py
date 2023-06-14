@@ -94,8 +94,8 @@ def handle_message(event):
         #message = TextSendMessage(text=event.message.text)
         reply_msg = TextSendMessage(text=random.choice(lunch_options))
     line_bot_api.reply_message(event.reply_token, reply_msg)
-    
-    
+        return
+    ai_msg = msg[:6].lower()
     if ai_msg == 'hi ai:':
             # 將第六個字元之後的訊息發送給 OpenAI
             response = openai.Completion.create(
@@ -108,11 +108,12 @@ def handle_message(event):
             reply_msg = TextSendMessage(text=response["choices"][0]["text"].replace('\n',''))
 
     
-    if msg == "晚餐吃什麼":
+    if msg == "晚餐吃甚麼":
         lunch_options = ['便當', '麵類', '飯類', '燉飯', '三明治']
         #message = TextSendMessage(text=event.message.text)
         reply_msg = TextSendMessage(text=random.choice(lunch_options))
     line_bot_api.reply_message(event.reply_token, reply_msg)
+
 
 import os
 if __name__ == "__main__":

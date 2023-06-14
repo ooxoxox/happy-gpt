@@ -142,21 +142,8 @@ def handle_message(event):
         ]
       }
     ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "sm",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [],
-        "margin": "sm"
-      }
-    ],
-    "flex": 0
   }
+}
 }
     msg = event.message.text
     if msg  == "發卡片":

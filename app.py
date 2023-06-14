@@ -95,7 +95,7 @@ def handle_message(event):
         reply_msg = TextSendMessage(text=random.choice(lunch_options))
     line_bot_api.reply_message(event.reply_token, reply_msg)
     
-    ai_msg = msg[:6].lower()
+    
     if ai_msg == 'hi ai:':
             # 將第六個字元之後的訊息發送給 OpenAI
             response = openai.Completion.create(
